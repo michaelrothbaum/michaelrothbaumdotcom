@@ -1,0 +1,381 @@
+body {
+    background-color: #ebf7ff;
+}
+
+.background-section {
+    border: 2px solid black;
+    height: 80%;
+    margin: 15px;
+    z-index: 100
+}
+
+/*#my-photo {
+    position: absolute;
+    width: 20%;
+    height: auto;
+    right: 7%;
+    top: 190px;
+    box-shadow: 3px 3px red;
+    border: 2px solid black
+}
+*/
+
+#my-photo {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+    object-position: left;
+}
+
+
+#welcome p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    display: flex;
+    padding-left: 150px;
+    margin-bottom: 0;
+    margin-top: 60px;
+    
+}
+
+
+.wave {
+    animation-name: wave-animation;
+    /* Refers to the name of your @keyframes element below */
+    animation-duration: 2.5s;
+    /* Change to speed up or slow down */
+    animation-iteration-count: 1;
+    /* Never stop waving :) */
+    transform-origin: 70% 70%;
+    /* Pivot around the bottom-left palm */
+    animation-delay: 0.5s;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: rotate(0.0deg)
+    }
+
+    10% {
+        transform: rotate(14.0deg)
+    }
+
+    /* The following five values can be played with to make the waving more or less extreme */
+    20% {
+        transform: rotate(-8.0deg)
+    }
+
+    30% {
+        transform: rotate(14.0deg)
+    }
+
+    40% {
+        transform: rotate(-4.0deg)
+    }
+
+    50% {
+        transform: rotate(10.0deg)
+    }
+
+    60% {
+        transform: rotate(0.0deg)
+    }
+
+    /* Reset for the last half to pause */
+    100% {
+        transform: rotate(0.0deg)
+    }
+}
+
+/*#centered-container {
+    margin-right: 150px;
+    display: flex;
+    table-layout: fixed;
+    margin-top: 3%;
+    justify-content: center;
+    font-family: 'Work Sans';
+    border-collapse: collapse;
+}*/
+
+#centered-container {
+    font-family: 'Work Sans';
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) 1fr; /* 3 columns, where the last one spans 2 rows */
+    grid-template-rows: repeat(1, 1fr); /* 2 rows */
+    gap: 10px; /* Adjust the gap between grid items */
+    height: 70px;
+    margin-top: 30px;
+    
+}
+
+
+@keyframes pop-animation {
+    0% {
+        transform: translateY(300%)
+    }
+
+    90% {
+        transform: translateY(0%)
+    }
+
+    95% {
+        transform: translateY(2.5%)
+    }
+
+    100% {
+        transform: translateY(0%)
+    }
+}
+
+.background-bar {
+    height: 80px;
+    background: blue;
+}
+
+#information-text {
+    display: flex;
+    flex-direction: column;
+}
+
+#more-information {
+    align-items: center;
+    width: 350px;
+}
+
+
+
+.bottom-row {
+    display: flex;
+    height: 250px;
+    justify-content: flex-end;
+}
+
+.span-both-rows {
+    grid-row: span 2; /* Span 2 rows */
+    
+}
+
+#in {
+    background-color: #0a66c2;
+    color: white;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 2px;
+}
+
+#added-description a {
+    color: black
+}
+
+#intro-container {
+    text-align: right;
+    animation-name: pop-animation;
+    /* Refers to the name of your @keyframes element below */
+    animation-duration: 1s;
+    /* Change to speed up or slow down */
+    animation-iteration-count: 1;
+}
+
+#clickable-text {
+    background-color: blue;
+    color: white;
+}
+
+/*--------------------*/
+
+ul li {
+    animation-name: GFG;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    font-size: 2px;
+}
+
+ul li:nth-child(1) {
+    animation-delay: 0;
+}
+
+ul li:nth-child(2) {
+    animation-delay: 0.025s;
+}
+
+ul li:nth-child(3) {
+    animation-delay: 0.05s;
+}
+
+ul li:nth-child(4) {
+    animation-delay: 0.075s;
+}
+
+ul li:nth-child(5) {
+    animation-delay: 0.1s;
+}
+
+ul li:nth-child(6) {
+    animation-delay: 0.125s;
+}
+
+@keyframes GFG {
+    from {
+        font-size: 2px;
+    }
+
+    to {
+        font-size: 16px;
+    }
+}
+
+/*--------------------*/
+
+#all-options li {
+    background-color: blue;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 2px;
+    margin: 10px 0px 10px;
+}
+
+
+td {
+    white-space: wrap;
+    text-overflow: ellipsis;
+}
+
+#more,
+#show-and-hide {
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+#greeting {
+    display: block;
+}
+
+#back-arrow {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+.fixed-box {    
+    width: 350px; 
+    justify-content:flex-start; 
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+}
+
+#top-row {
+    display: flex;
+align-items: center;
+    min-height: 75px;
+}
+
+#all-options {
+    text-align: right;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#footer-section {
+    font-family: 'Work Sans';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* Center horizontally */
+    transform: translateX(-50%);
+    /* Move back half of the element's width */
+    z-index: 10;
+}
+
+footer a {
+    text-decoration: none;
+    color: black
+}
+
+@media only screen and (max-width: 993px) {
+ 
+    .background-section {
+        border: 0px;
+    }
+    
+  #centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+    #photo-section
+    {
+        order: 3;
+        margin-top: 175px;
+
+    }
+
+    #my-photo
+    {
+        margin-bottom: 20px;
+    }
+
+    #top-row {
+        display: block;
+        justify-content: flex-end; /* Align items to the right */
+        align-items: flex-end; /* Align items to the bottom */
+        min-height: 75px;
+        width: 350px
+    }
+
+    #welcome p {
+        justify-content: center;
+        padding-left: 0px;
+    }
+    #show-and-hide {
+        display: none;
+    }
+    #period {
+        display: none;
+    }
+    #clickable-text {
+        display: list-item;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    #intro-container {
+        order: 1;
+        display: block;
+        width: 200px;
+        margin: 0px;
+        margin-left: 25px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+    #more-information {
+        order: 2;
+        display: block;
+        width: auto;
+        height: 200px;
+        margin: 0px;
+        margin-left: 25px;
+        margin-top: 25px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    #information-text {
+        margin-top: 0px;
+    }
+
+
+    .fixed-box {    
+        height: auto;    
+        justify-content: top;
+    }
+    tbody {
+        vertical-align: top;
+    }
+ 
+}
