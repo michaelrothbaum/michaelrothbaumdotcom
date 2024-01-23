@@ -5,7 +5,7 @@ const textValues = [
     },
     {
         title: "a Product Manager",
-        description: 'I\'ve worked at Meta, <span id=wm>WorkMarket</span>, Namely, and Ultimate Software. I\'m currently looking for my new gig. <a href="https://www.linkedin.com/in/michaelrothbaum/" target="_blank">Check out my Linked<span id="in">in</span></a>'
+        description: 'I\'ve worked at Meta, <span id=wm>WorkMarket</span>, Namely, and Ultimate Software. <a href="https://www.linkedin.com/in/michaelrothbaum/" target="_blank">Check out my Linked<span id="in">in</span></a>'
     },
     {
         title: "a father",
