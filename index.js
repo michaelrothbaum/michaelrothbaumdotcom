@@ -81,9 +81,9 @@ const showDescription = function () {
     /*infoText.style.animationName = 'GFG';
     infoText.style.animationDuration = '0.3s';
     infoText.style.animationFillMode = 'forwards';
-    infoText.style.fontSize = '2px';
+    infoText.style.fontSize = '2px';*/
     infoText.style.boxShadow = '3px 3px red'
-    infoText.style.border = '2px solid black'*/
+    infoText.style.border = '2px solid black'
     backArrow.innerHTML = '<i class="bi bi-arrow-left-circle-fill"></i>';
     seeMore.removeEventListener('click', showDescription);
     document.removeEventListener('keydown', enterDescription)
