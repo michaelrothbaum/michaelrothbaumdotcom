@@ -1,10 +1,10 @@
 body {
-    background-color: #ebf7ff;
+    background: linear-gradient(to bottom right, #dbf0ff, #b5deff);
 }
 
 .background-section {
     border: 2px solid black;
-    height: 80%;
+    height: 85%;
     margin: 15px;
     z-index: 100
 }
@@ -99,7 +99,7 @@ body {
 
 #centered-container {
     font-family: 'Work Sans';
-    display: grid;
+    display: inline-grid;
     grid-template-columns: repeat(1, 1fr) 1fr;
     /* 3 columns, where the last one spans 2 rows */
     grid-template-rows: repeat(1, 1fr);
@@ -180,6 +180,7 @@ body {
 #clickable-text {
     background-color: blue;
     color: white;
+    border-radius: 2px;
 }
 
 #photo-section {
@@ -305,6 +306,10 @@ footer a {
 
 @media only screen and (max-width: 1115px) {
 
+    body {
+        background: #dbf0ff;
+    }
+    
     .background-section {
         border: 0px;
     }
