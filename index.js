@@ -1,3 +1,44 @@
+// Your anniversary  
+const anniversaryDate = new Date('2020-08-09');  
+
+/**
+ * Returns either:
+ *  • "I've been married to the love of my life for almost X years."
+ *  • "I've been married to the love of my life for over Y years."
+ */
+function getAnniversaryDescription() {
+  const now = new Date();
+  const month = anniversaryDate.getMonth();
+  const day   = anniversaryDate.getDate();
+
+  // Compute this year's anniversary date
+  const thisYearAnniv = new Date(now.getFullYear(), month, day);
+
+  let lastAnniv, nextAnniv;
+  if (now >= thisYearAnniv) {
+    lastAnniv = thisYearAnniv;
+    nextAnniv = new Date(now.getFullYear() + 1, month, day);
+  } else {
+    lastAnniv = new Date(now.getFullYear() - 1, month, day);
+    nextAnniv = thisYearAnniv;
+  }
+
+  // Full years completed
+  const yearsPassed = lastAnniv.getFullYear() - anniversaryDate.getFullYear();
+
+  // Half-anniversary interval in ms
+  const halfYearMs = (nextAnniv - lastAnniv) / 2;
+  const msUntilNext = nextAnniv - now;
+
+  if (msUntilNext <= halfYearMs) {
+    // within 6 months of the next one
+    return `I've been married to the love of my life for almost ${yearsPassed + 1} years.`;
+  } else {
+    // more than 6 months since last one
+    return `I've been married to the love of my life for over ${yearsPassed} years.`;
+  }
+}
+
 const textValues = [
     {
         title: "Michael",
@@ -5,7 +46,7 @@ const textValues = [
     },
     {
         title: "a Product Manager",
-        description: 'I\'ve worked at Meta, <span id=wm>WorkMarket</span>, Namely, and Ultimate Software. <a href="https://www.linkedin.com/in/michaelrothbaum/" target="_blank">Check out my Linked<span id="in">in</span></a>'
+        description: 'I\'m currently a Senior Product Manager at Thoropass. <a href="https://www.linkedin.com/in/michaelrothbaum/" target="_blank">Check out my Linked<span id="in">in</span></a>'
     },
     {
         title: "a father",
@@ -13,7 +54,7 @@ const textValues = [
     },
     {
         title: "a husband",
-        description: "I've been married to the love of my life for over 3 years."
+        description: getAnniversaryDescription()
     },
     {
         title: "a brother",
