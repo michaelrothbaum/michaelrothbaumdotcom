@@ -1,49 +1,61 @@
+<!-- index.html -->
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Michael Rothbaum</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet" type="text/css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Work+Sans&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div class="background-bar"></div>
-  <div class="background-section">
-    <div id="welcome">
-      <p><span>Welcome. </span><span class="wave">👋</span></p>
-    </div>
-    <div id="centered-container">
-      <div id="top-row">
-        <div id="intro-container" class="fixed-box">
-            <span id="greeting">Hello, I'm <span id="clickable-text">Michael</span><span id="period">.</span></span>
-            <span id="show-and-hide"><i class="bi bi-arrow-down-circle-fill"></i></span>
-            <span id="more"><i class="bi bi-arrow-right-circle-fill"></i></span>
-        </div>
-        <div id="more-information" class="fixed-box">
-          <span id="information-text"></span>
-          <span id="back-arrow"></span>
-          <!-- Content for moreInformation -->
-        </div>
-      </div>
-        <div id="photo-section" class="fixed-box span-both-rows"><img id="my-photo" src="./images/IMG_0051.JPG"/>
-        </div>
-        <div id="all-options" class="fixed-box bottom-row"></div>
+  <header class="site-header">
+  </header>
 
-    </div>
-  </div>
-  <footer id="footer-section">
+  <main class="layout">
+    <section class="intro" aria-labelledby="intro-heading">
+      <h2 id="intro-heading" class="visually-hidden">Introduction</h2>
+    <h1>Welcome. <span class="wave">👋</span></h1>
+      <p class="intro__greeting">
+        Hello, I’m 
+        <!-- This span is now clickable to cycle titles -->
+        <span id="intro-text" class="intro__text-btn">Michael</span>.
+      </p>
+
+      <div class="intro__controls">
+        <!-- removed prev button -->
+<button id="toggle-list" class="btn" aria-label="Show all options">
+          <i class="bi bi-arrow-down-circle-fill"></i>
+        </button>
+        <button id="info" class="btn" aria-label="More info">
+          <i class="bi bi-info-circle-fill"></i>
+        </button>
+      </div>
+
+      <div id="description" class="intro__description" hidden></div>
+
+      <ul id="options-list" class="intro__options">
+        <li>Michael</li>
+        <li>a Product Manager</li>
+        <li>a father</li>
+        <li>a husband</li>
+        <li>a brother</li>
+        <li>a son</li>
+      </ul>
+    </section>
+
+    <section class="photo" aria-labelledby="photo-heading">
+      <h2 id="photo-heading" class="visually-hidden">Photo</h2>
+      <img src="./images/newpic.jpeg" alt="Photo of Michael Rothbaum">
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Michael Rothbaum</p>
   </footer>
+
   <script src="index.js"></script>
 </body>
-
-
-
 </html>
