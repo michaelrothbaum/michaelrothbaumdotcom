@@ -1,168 +1,30 @@
-@media (min-width: 1116px) {
-  html, body {
-    margin: 0;
-    height: 100%;
-    overflow: hidden;            
-    overscroll-behavior: none;  
-  }
+/* style.css */
+:root {
+  --bg: #cfefff;
+  --primary: #0066ff;
+  --font-base: 'Work Sans', sans-serif;
+  --font-heading: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {
-    background: linear-gradient(to bottom right, #dbf0ff, #b5deff);
+  margin: 0;
+  font-family: var(--font-base);
+  background: var(--bg);
 }
 
-.background-section {
-    border: 2px solid black;
-    height: 82.5%;
-    margin: 15px;
-    z-index: 100
-}
-
-/*#my-photo {
-    position: absolute;
-    width: 20%;
-    height: auto;
-    right: 7%;
-    top: 190px;
-    box-shadow: 3px 3px red;
-    border: 2px solid black
-}
-*/
-
-#my-photo {
-    width: 100%;
-    height: 90%;
-    object-fit: contain;
-    object-position: left;
-}
-
-#welcome p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
-    display: flex;
-    padding-left: 150px;
-    margin-bottom: 0;
-    margin-top: 60px;
-
-}
-
-.wave {
-    animation-name: wave-animation;
-    /* Refers to the name of your @keyframes element below */
-    animation-duration: 2.5s;
-    /* Change to speed up or slow down */
-    animation-iteration-count: 1;
-    /* Never stop waving :) */
-    transform-origin: 70% 70%;
-    /* Pivot around the bottom-left palm */
-    animation-delay: 0.5s;
-    display: inline-block;
-    margin-left: 10px;
-}
-
-@keyframes wave-animation {
-    0% {
-        transform: rotate(0.0deg)
-    }
-
-    10% {
-        transform: rotate(14.0deg)
-    }
-
-    /* The following five values can be played with to make the waving more or less extreme */
-    20% {
-        transform: rotate(-8.0deg)
-    }
-
-    30% {
-        transform: rotate(14.0deg)
-    }
-
-    40% {
-        transform: rotate(-4.0deg)
-    }
-
-    50% {
-        transform: rotate(10.0deg)
-    }
-
-    60% {
-        transform: rotate(0.0deg)
-    }
-
-    /* Reset for the last half to pause */
-    100% {
-        transform: rotate(0.0deg)
-    }
-}
-
-/*#centered-container {
-    margin-right: 150px;
-    display: flex;
-    table-layout: fixed;
-    margin-top: 3%;
-    justify-content: center;
-    font-family: 'Work Sans';
-    border-collapse: collapse;
-}*/
-
-#centered-container {
-    font-family: 'Work Sans';
-    display: inline-grid;
-    grid-template-columns: repeat(1, 1fr) 1fr;
-    /* 3 columns, where the last one spans 2 rows */
-    grid-template-rows: repeat(1, 1fr);
-    /* 2 rows */
-    gap: 10px;
-    /* Adjust the gap between grid items */
-    height: 70px;
-    margin-top: 30px;
-    transform: translateY(-100px);
-}
-
-@keyframes pop-animation {
-    0% {
-        transform: translateY(300%)
-    }
-
-    90% {
-        transform: translateY(0%)
-    }
-
-    95% {
-        transform: translateY(2.5%)
-    }
-
-    100% {
-        transform: translateY(0%)
-    }
-}
-
-.background-bar {
-    height: 80px;
-    background: blue;
-}
-
-#information-text {
-    display: flex;
-    flex-direction: column;
-}
-
-#more-information {
-    align-items: center;
-    width: 350px;
-}
-
-.bottom-row {
-    display: flex;
-    height: 250px;
-    justify-content: flex-end;
-}
-
-.span-both-rows {
-    grid-row: span 2;
-    /* Span 2 rows */
-
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 #in {
@@ -173,237 +35,190 @@ body {
     border-radius: 2px;
 }
 
-#added-description a {
-    color: black
+/* Center and border the main content */
+.site-header,
+.layout,
+.site-footer {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-#intro-container {
-    text-align: right;
-    animation-name: pop-animation;
-    /* Refers to the name of your @keyframes element below */
-    animation-duration: 1s;
-    /* Change to speed up or slow down */
-    animation-iteration-count: 1;
+/* Header */
+.site-header {
+  padding: 1rem;
+  text-align: center;
+}
+.site-header h1 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  margin: 0;
 }
 
-#clickable-text {
-    background-color: blue;
-    color: white;
-    border-radius: 2px;
+/* Two-column grid */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  border: 2px solid #000;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
 }
 
-#photo-section {
-    height: 500px;
+/* Intro column */
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-/*--------------------*/
-
-ul li {
-    animation-name: GFG;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-    font-size: 2px;
+.intro__greeting {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
 }
 
-ul li:nth-child(1) {
-    animation-delay: 0;
+/* ← New: highlight the dynamic title text */
+.intro__greeting #intro-text {
+  background-color: var(--primary);
+  color: #fff;
+  padding: 0 0.25em;
+  border-radius: 0rem;
 }
 
-ul li:nth-child(2) {
-    animation-delay: 0.025s;
+.intro__controls {
+  display: flex;
+  gap: 1rem;
 }
 
-ul li:nth-child(3) {
-    animation-delay: 0.05s;
+.intro__description {
+  padding: 1rem;
+  background: #ffeeed;
+  border: 2px solid #000;
+  box-shadow: 3px 3px red;
+  border-radius: 0px;
 }
 
-ul li:nth-child(4) {
-    animation-delay: 0.075s;
+.intro__options {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
 }
 
-ul li:nth-child(5) {
-    animation-delay: 0.1s;
+.intro__options li {
+  background: var(--primary);
+  color: #fff;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0px;
+  cursor: pointer;
 }
 
-ul li:nth-child(6) {
-    animation-delay: 0.125s;
+/* Photo column */
+.photo img {
+  height: 80vh;        /* full viewport height */
+  width: auto;          /* keep aspect ratio */
+  object-fit: cover;    /* crop if necessary */
 }
 
-@keyframes GFG {
-    from {
-        font-size: 2px;
-    }
-
-    to {
-        font-size: 16px;
-    }
+@media (max-width: 768px) {
+  .photo img {
+    height: auto;
+    width: 100%;
+    object-fit: contain; /* or cover, whichever you prefer */
+  }
 }
 
-/*--------------------*/
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+}
 
-#all-options li {
-    background-color: blue;
-    color: white;
-    padding: 2px 5px;
-    border-radius: 2px;
-    margin: 10px 0px 10px;
+/* 👋 Hand-wave animation */
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  /* run the keyframes once, and stay at the final frame */
+  animation: wave-animation 2s ease-in-out 1 forwards;
+}
+
+@keyframes wave-animation {
+  0%   { transform: rotate(0deg); }
+  15%  { transform: rotate(14deg); }
+  30%  { transform: rotate(-8deg); }
+  45%  { transform: rotate(14deg); }
+  60%  { transform: rotate(-4deg); }
+  75%  { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.btn {
+  background: transparent;
+  color: #000;
+  border: none;
+  cursor: pointer;
+
+  /* make it bigger: */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;      /* ↑ increase/decrease for more space */
+  font-size: 1.5rem;     /* ↑ scale icon/text size */
+  line-height: 1;        /* prevent extra vertical spacing */
+
+  /* optional: force a square shape */
+  width: 3rem;
+  height: 3rem;
+}
+.btn:focus {
+  outline: none;
+}
+
+/* at the bottom of style.css */
+@media (max-width: 768px) {
+  .intro {
+    /* Reserve enough vertical space so opening never shifts the photo */
+    min-height: 500px;    /* ← tweak this value to fit your content */
+  }
 }
 
 
-td {
-    white-space: wrap;
-    text-overflow: ellipsis;
+.intro__options {
+  overflow: hidden;
+  max-height: 0;
 }
 
-#more,
-#show-and-hide {
-    cursor: pointer;
-    margin-left: 10px;
-    margin-right: 10px;
-    font-size: 1.2em;
+/* expanded: animate opening */
+.intro__options.expanded {
+  max-height: 500px; /* adjust as needed */
+  transition: max-height 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
 }
 
-#greeting {
-    display: block;
+
+/* each item starts off invisible & up */
+.intro__options li {
+  display: block;         /* vertical stack */
+  width: fit-content;     /* only as wide as its text */
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: pop-in 0.35s cubic-bezier(0.25,1.5,0.5,1) forwards;
 }
 
-#back-arrow {
-    cursor: pointer;
-    margin-left: 10px;
-    font-size: 1.2em;
-}
+/* stagger their pop-in */
+.intro__options.expanded li:nth-child(1){animation-delay:0.05s;}
+.intro__options.expanded li:nth-child(2){animation-delay:0.10s;}
+.intro__options.expanded li:nth-child(3){animation-delay:0.15s;}
+.intro__options.expanded li:nth-child(4){animation-delay:0.20s;}
+.intro__options.expanded li:nth-child(5){animation-delay:0.25s;}
+.intro__options.expanded li:nth-child(6){animation-delay:0.30s;}
 
-.fixed-box {
-    width: 350px;
-    justify-content: flex-start;
-    display: flex;
-    justify-content: flex-end;
-    /* Align items to the right */
-}
-
-#top-row {
-    display: flex;
-    align-items: center;
-    min-height: 75px;
-}
-
-#all-options {
-    text-align: right;
-    justify-content: center;
-    transform: translateY(-100px);
-}
-
-ul {
-    list-style-type: none;
-}
-
-#footer-section {
-    font-family: 'Work Sans';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    /* Center horizontally */
-    transform: translateX(-50%);
-    /* Move back half of the element's width */
-    z-index: 10;
-}
-
-footer a {
-    text-decoration: none;
-    color: black
-}
-
-@media only screen and (max-width: 1115px) {
-
-    body {
-        background: #dbf0ff;
-    }
-    
-    .background-section {
-        border: 0px;
-    }
-
-    #centered-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transform: translateY(0px);
-    }
-
-    #photo-section {
-        order: 3;
-        margin-top: 175px;
-        height: auto
-
-    }
-
-    #my-photo {
-        margin-bottom: 100px;
-    }
-
-    #top-row {
-        display: block;
-        justify-content: flex-end;
-        /* Align items to the right */
-        align-items: flex-end;
-        /* Align items to the bottom */
-        min-height: 75px;
-        width: 350px
-    }
-
-    #welcome p {
-        justify-content: center;
-        padding-left: 0px;
-    }
-
-    #show-and-hide {
-        display: none;
-    }
-
-    #period {
-        display: none;
-    }
-
-    #clickable-text {
-        display: block;
-        margin-top: 5px;
-        margin-bottom: 10px;
-    }
-
-    #intro-container {
-        order: 1;
-        display: block;
-        width: 200px;
-        margin: 0px;
-        margin-left: 25px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
-
-    #more-information {
-        order: 2;
-        display: block;
-        width: auto;
-        height: 200px;
-        margin: 0px;
-        margin-left: 25px;
-        margin-top: 25px;
-        padding-top: 0px;
-        padding-bottom: 0px;
-    }
-
-    #information-text {
-        margin-top: 0px;
-        margin-bottom: 10px;
-    }
-
-    .fixed-box {
-        height: auto;
-        justify-content: top;
-    }
-
-    tbody {
-        vertical-align: top;
-    }
-
+@keyframes pop-in {
+  0%   { opacity:0; transform: translateY(-20px) scale(0.95); }
+  60%  { opacity:1; transform: translateY(5px)  scale(1.02); }
+  100% { opacity:1; transform: translateY(0)     scale(1); }
 }
